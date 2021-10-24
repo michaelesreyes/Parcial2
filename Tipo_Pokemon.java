@@ -69,13 +69,13 @@ public class Tipo_Pokemon extends Pokemon
       Habilidades = text.nextLine();
 
       this.listaHabilidades.add(i,Habilidades);
-      
+
     }
   }
 
   public void llenarListaDebilidades (String Debilidades)
   {
-    
+
     Scanner text = new Scanner(System.in);
     Scanner num = new Scanner(System.in);
 
@@ -120,7 +120,7 @@ public class Tipo_Pokemon extends Pokemon
   {
 
     return listaDebilidades.toString();
-    
+
   }
 
   public void calcularPoderPokemon()
@@ -139,7 +139,4 @@ public class Tipo_Pokemon extends Pokemon
   {
     return "\u001B[31mNombre Pokemon:\u001B[37m " + super.getNombre() + "\n\u001B[31mSexo Pokemon:\u001B[37m " + super.getSexo() + "\n\u001B[31mTipo pokemon:\u001B[37m "+ tipoPokemon +"\n\u001B[31mNivel Pokemon:\u001B[37m " + nivel + "\n\u001B[31mPoder Pokemon:\u001B[37m " + getPoderPokemon() + "\n\u001B[31mHabilidades:\u001B[37m " + getListaHabilidades() + "\u001B[31m\nDebilidades:\u001B[37m " + getListaDebilidades();
   }
-
-
-  
 }

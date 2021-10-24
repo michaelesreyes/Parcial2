@@ -1,7 +1,7 @@
 /**
  * Lider_de_Gimnasio
  */
-import java.util.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -12,7 +12,7 @@ public class Lider_de_Gimnasio extends Entrendores {
   private ArrayList <Tipo_Pokemon> ListaPokemon;
   private String tipoPokemonGimnasio;
 
-  public Lider_de_Gimnasio() 
+  public Lider_de_Gimnasio()
   {
 
     this.NombreGimnasio = "";
@@ -29,7 +29,7 @@ public class Lider_de_Gimnasio extends Entrendores {
     this.poderEntrenador = poderEntrenador;
     this.tipoPokemonGimnasio =tipoPokemonGimnasio;
     this.ListaPokemon = ListaPokemon;
-    
+
   }
 
   public void setNombreGimnasio(String NombreGimnasio)
@@ -55,10 +55,10 @@ public class Lider_de_Gimnasio extends Entrendores {
     Scanner num = new Scanner(System.in);
     Tipo_Pokemon lista = new Tipo_Pokemon();
 
-    
+
     String Datos;
 
-    System.out.println("¿Cuántos Pokemones desea añadir?");    
+    System.out.println("¿Cuántos Pokemones desea añadir?");
 
     cantidad = num.nextInt();
 
@@ -107,14 +107,14 @@ public class Lider_de_Gimnasio extends Entrendores {
       DatosN = num.nextInt();
       lista.setNivel(DatosN);
       calcularPoderEntrenador();
-      
+
       ListaPokemon.add(i,lista);
 
       ListaPokemon.get(i).llenarListaHabilidades(Datos);
 
       ListaPokemon.get(i).llenarListaDebilidades(Datos);
 
-      
+
     }
   }
 
@@ -125,7 +125,7 @@ public class Lider_de_Gimnasio extends Entrendores {
     {
       ListaPokemon.get(i).calcularPoderPokemon();
       poderEntrenador = poderEntrenador + ListaPokemon.get(i).getPoderPokemon();
-      
+
     }
 
   }

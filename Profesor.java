@@ -1,7 +1,7 @@
 /**
  * Profesor
  */
-import java.util.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -10,22 +10,23 @@ public class Profesor extends Persona{
   private String region;
   private String LicenciaProfesor;
   private ArrayList <Tipo_Pokemon> listaPokemonIniciales;
-  
+
   public Profesor()
   {
     this.region = "";
     this.LicenciaProfesor = "";
     this.listaPokemonIniciales = new ArrayList <Tipo_Pokemon>(3);
-    
+
   }
 
-  public Profesor (String nombrePro, String edadPro, String sexoPro,String region, String LicenciaProfesor,ArrayList <Tipo_Pokemon> listaPokemonIniciales) {
-    
+  public Profesor (String nombrePro, String edadPro, String sexoPro,String region, String LicenciaProfesor,ArrayList <Tipo_Pokemon> listaPokemonIniciales)
+  {
+
     super(nombrePro, edadPro, sexoPro);
     this.region = region;
     this.LicenciaProfesor = LicenciaProfesor;
     this.listaPokemonIniciales = listaPokemonIniciales;
-    
+
   }
 
   public void setRegion(String region)
@@ -53,10 +54,10 @@ public class Profesor extends Persona{
     Scanner text = new Scanner(System.in);
     Scanner num = new Scanner(System.in);
     Tipo_Pokemon lista = new Tipo_Pokemon();
-    
+
     for(int i = 0; i < 3; i++)
     {
-      
+
       System.out.println("Por favor ingresar el nombre del pokemon" + (i+1));
 
       Datos = text.nextLine();
@@ -82,7 +83,7 @@ public class Profesor extends Persona{
 
       DatosN = num.nextInt();
       lista.setNivel(DatosN);
-      
+
       listaPokemonIniciales.add(i,lista);
 
       listaPokemonIniciales.get(i).llenarListaHabilidades(Datos);
@@ -93,7 +94,6 @@ public class Profesor extends Persona{
 
   }
 
-  
 
   public String To_String()
   {

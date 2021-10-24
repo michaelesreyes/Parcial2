@@ -1,7 +1,7 @@
 /**
  * Entrenador_Pokemon
  */
-import java.util.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -9,28 +9,30 @@ public class Entrenador_Pokemon extends Entrendores
 {
 
   private double poderEntrenador;
-  private ArrayList <Tipo_Pokemon> ListaPokemon; 
+  private ArrayList <Tipo_Pokemon> ListaPokemon;
   private Profesor ProfesorAsignado;
 
-  public Entrenador_Pokemon(){
+  public Entrenador_Pokemon()
+  {
 
     this.poderEntrenador = 0.0;
     this.ProfesorAsignado = new Profesor();
     this.ListaPokemon = new ArrayList <Tipo_Pokemon> ();
-    
+
   }
 
-  public Entrenador_Pokemon(String nombreEn, String edadEn, String sexoEn, String licenciaEn, String regionEn, int poderEntrenador, Profesor ProfesorAsignado,ArrayList <Tipo_Pokemon> ListaPokemon){
+  public Entrenador_Pokemon(String nombreEn, String edadEn, String sexoEn, String licenciaEn, String regionEn, int poderEntrenador, Profesor ProfesorAsignado,ArrayList <Tipo_Pokemon> ListaPokemon)
+  {
 
     super(nombreEn, edadEn, sexoEn, licenciaEn, regionEn);
     this.poderEntrenador = poderEntrenador;
     this.ProfesorAsignado = ProfesorAsignado;
     this.ListaPokemon = ListaPokemon;
-    
+
   }
 
   int cantidad, DatosN;
-  
+
   public void CrearListaPokemon()
   {
 
@@ -38,10 +40,10 @@ public class Entrenador_Pokemon extends Entrendores
     Scanner num = new Scanner(System.in);
     Tipo_Pokemon lista = new Tipo_Pokemon();
 
-    
+
     String Datos;
 
-    System.out.println("¿Cuántos Pokemones desea añadir?");        
+    System.out.println("¿Cuántos Pokemones desea añadir?");
 
     cantidad = num.nextInt();
 
@@ -83,7 +85,7 @@ public class Entrenador_Pokemon extends Entrendores
       DatosN = num.nextInt();
       lista.setNivel(DatosN);
       calcularPoderEntrenador();
-      
+
       ListaPokemon.add(i,lista);
 
       ListaPokemon.get(i).llenarListaHabilidades(Datos);
@@ -130,14 +132,14 @@ public class Entrenador_Pokemon extends Entrendores
     System.out.println("Por favor ingresar el \u001B[31msexo del profesor asigando\u001B[37m");
 
     Datos = text.nextLine();
-    
+
     ProfesorAsignado.setSexo(Datos);
 
     System.out.println("Por favor ingresar la \u001B[31mregion del profesor asigando\u001B[37m");
 
     Datos = text.nextLine();
     String Region = getRegion();
-    
+
     while(!Datos.equals(Region))
     {
       System.out.println("La region no es valida");
@@ -152,11 +154,7 @@ public class Entrenador_Pokemon extends Entrendores
     ProfesorAsignado.setLicenciaProfesor(Datos);
 
     ProfesorAsignado.intCrearListaPokemonInicial(Datos, DatosN);
-    
-    
-      
-    
-    
+
   }
 
   public String To_String()
@@ -166,15 +164,15 @@ public class Entrenador_Pokemon extends Entrendores
 
   public void ImprimirListaPokemones()
   {
-    
+
     ProfesorAsignado.ImprimirListaPokemones();
 
     System.out.println("\n--------Lista Pokemon--------");
-    
+
     for(int i = 0; i < cantidad; i++)
     {
       System.out.println(ListaPokemon.get(i).To_String());
     }
   }
-  
+
 }

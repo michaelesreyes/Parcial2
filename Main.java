@@ -1,11 +1,11 @@
-import java.util.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
-class Main 
+class Main
 {
-  public static void main(String[] args) 
+  public static void main(String[] args)
   {
-    
+
     Scanner text = new Scanner(System.in);
     Scanner num = new Scanner(System.in);
 
@@ -39,8 +39,6 @@ class Main
 
             opcionL = text.next().charAt(0);
 
-          
-          
             switch(opcionL)
             {
 
@@ -107,9 +105,9 @@ class Main
 
                   entrenador.get(i).CrearProfesor();
                   entrenador.get(i).CrearListaPokemon();
-                    
+
                 }
-                  
+
               break;
 
               case 'b':
@@ -189,7 +187,7 @@ class Main
                   lider.add(i,Gym);
 
                   lider.get(i).CrearListaPokemon();
-                    
+
                 }
 
               break;
@@ -197,20 +195,20 @@ class Main
 
                 System.out.println("Adios.");
                 DatoN = 0;
-          
+
               break;
             }
           }
-          
 
         break;
         case 2:
 
           for(int i = 0; i < CantidadE; i++)
           {
-            
+
             System.out.println(entrenador.get(i).To_String());
             entrenador.get(i).ImprimirListaPokemones();
+
           }
 
         break;
@@ -218,9 +216,10 @@ class Main
 
           for(int i = 0; i < CantidadL; i++)
           {
-            
+
             System.out.println(lider.get(i).To_String());
             lider.get(i).ImprimirListaPokemones();
+
           }
 
         break;
@@ -233,7 +232,7 @@ class Main
 
           int estaE = 0;
           int estaL = 0;
-          
+
           for(int i = 0; i < CantidadE; i++)
           {
             if(Dato == entrenador.get(i).getLicencia())
@@ -253,9 +252,9 @@ class Main
           }
 
           System.out.println("Por favor digite la licencia del lider de gimnasio");
-          
+
           Dato = text.nextLine();
-          
+
           for(int i = 0; i < CantidadL; i++)
           {
             if(Dato == lider.get(i).getLicencia())
@@ -292,6 +291,6 @@ class Main
         break;
 
       }
-    } 
+    }
   }
 }

@@ -6,7 +6,7 @@ public abstract class Entrendores extends Persona
 
   private String licencia;
   private String region;
-  
+
   public Entrendores()
   {
 

@@ -1,7 +1,7 @@
 /**
  * Persona
  */
-public abstract class Persona 
+public abstract class Persona
 {
 
   private String nombre;
@@ -58,5 +58,5 @@ public abstract class Persona
 
 
   public abstract String To_String();
-  
+
 }
